@@ -22,7 +22,7 @@ jobs:
 
     - name: Pull from Upstream
       run: |
-        git remote add upstream https://github.com/example/test.git  # Replace with your upstream repository
+        git remote add upstream https://github.com/example/test.git  # Replace with the actual upstream repo URL
         git fetch upstream
 
     - name: Check for changes and merge if any
@@ -36,6 +36,7 @@ jobs:
           echo "No changes to merge. The branches are already in sync."
         fi
 
-    - name: Push to Origin
+    - name: Push to Fork (Origin)
       run: |
+        git remote set-url origin https://$GITHUB_ACTOR:${{ secrets.PAT_TOKEN }}@github.com/$GITHUB_ACTOR/api-application-deployment.git
         git push origin main
