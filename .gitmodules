@@ -1,0 +1,3 @@
+[submodule "plugins/alert-system"]
+	path = plugins/alert-system
+	url = https://github.com/PI-coffeeBreak/alert-system-plugin

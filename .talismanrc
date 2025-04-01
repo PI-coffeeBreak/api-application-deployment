@@ -1,1 +1,5 @@
+fileignoreconfig:
+- filename: plugins/alert-system
+  checksum: 3d124f8823117df721180672baa15847d9a18e73bcd73cc36f6dc7d2f3c79dd7
 threshold: medium
+version: "1.0"
