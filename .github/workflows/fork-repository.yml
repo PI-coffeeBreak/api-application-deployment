@@ -1,0 +1,30 @@
+name: Fork Core Repository
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * *' # Runs daily at midnight
+
+jobs:
+  fork-core-repo:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout current repository
+      uses: actions/checkout@v3
+
+    - name: Clone the core repository
+      run: git clone https://github.com/PI-coffeeBreak/core.git
+
+    - name: Set up Git
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+    - name: Push to current repository
+      run: |
+        cd core
+        git remote set-url origin https://github.com/PI-coffeeBreak/api-application-deployment.git
+        git push origin main --force
