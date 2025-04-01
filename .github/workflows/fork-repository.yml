@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 0 * * *' # Runs daily at midnight
+    - cron: '0 0 * * *'  # Runs daily at midnight
 
 jobs:
   deploy:
@@ -22,13 +22,19 @@ jobs:
 
     - name: Pull from Upstream
       run: |
-        git remote add upstream https://github.com/example/test.git
+        git remote add upstream https://github.com/example/test.git  # Replace with your upstream repository
         git fetch upstream
 
-    - name: Merge
+    - name: Check for changes and merge if any
       run: |
         git checkout main
-        git merge --no-edit upstream/main
+        # Check if there are changes to merge
+        if git rev-list HEAD...upstream/main --count | grep -q '[1-9]'; then
+          echo "Changes detected, merging upstream/main into main..."
+          git merge --no-edit upstream/main
+        else
+          echo "No changes to merge. The branches are already in sync."
+        fi
 
     - name: Push to Origin
       run: |
