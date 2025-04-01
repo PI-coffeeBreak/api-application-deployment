@@ -11,6 +11,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    env:
+      ORG_NAME: PI-coffeeBreak
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
@@ -38,5 +41,5 @@ jobs:
 
     - name: Push to Fork (Origin)
       run: |
-        git remote set-url origin https://$GITHUB_ACTOR:${{ secrets.PAT_TOKEN }}@github.com/$GITHUB_ACTOR/api-application-deployment.git
+        git remote set-url origin https://$ORG_NAME:${{ secrets.PAT_TOKEN }}@github.com/$ORG_NAME/api-application-deployment.git
         git push origin main
