@@ -4,3 +4,6 @@
 [submodule "plugins/webpush-notifications"]
 	path = plugins/webpush-notifications
 	url = https://github.com/PI-coffeeBreak/webpush-notifications-plugin
+[submodule "plugins/speaker-presentation"]
+	path = plugins/speaker-presentation
+	url = https://github.com/PI-coffeeBreak/speaker-presentation-plugin.git

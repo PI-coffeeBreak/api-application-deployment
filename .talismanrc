@@ -1,6 +1,8 @@
 fileignoreconfig:
 - filename: plugins/alert-system
   checksum: 3d124f8823117df721180672baa15847d9a18e73bcd73cc36f6dc7d2f3c79dd7
+- filename: plugins/speaker-presentation
+  checksum: 400a601631f78c9e6c8e1a66f3c69e8798350d980e6273611e888c11f5d14473
 - filename: plugins/webpush-notifications
   checksum: 49e8344c1cd6570b18a5da67c85d9017ab1fe36374bc64917ce1762961be9224
 threshold: medium
