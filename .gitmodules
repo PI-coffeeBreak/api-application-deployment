@@ -7,3 +7,6 @@
 [submodule "plugins/speaker-presentation"]
 	path = plugins/speaker-presentation
 	url = https://github.com/PI-coffeeBreak/speaker-presentation-plugin.git
+[submodule "plugins/registration-system"]
+	path = plugins/registration-system
+	url = https://github.com/PI-coffeeBreak/registration-system-plugin.git
